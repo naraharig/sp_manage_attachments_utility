@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+</head>
+
+<body class="container-fluid">
+
+    <div class="input-group">
+        <span class="input-group-addon">
+            Upload files
+        </span>
+        <div class="attachments form-control">
+
+            <span>
+                <input type="file" style="display:none;" name="requestImages" id="fileCntrl_Report" ng-model="Request.AttachedImages" multiple="multiple"
+                />
+                <button id="btn_Report_Attach" class="btn btn-small clsBrowseBtn" >
+                    <i class="fa fa-paperclip" aria-hidden="true"></i>
+                </button>
+                <br />
+            </span>
+            <div id="Attachedfiles" class="files">
+                <ul class="clsAttachedImages clsAttachments" id='ULReportAttachments'>
+                    <li ng-repeat="File in Attachments|filter:'-REPORTDOCS_--'">
+                        <span>
+                            <a ng-bind='File.FileName' href="{{File.ServerRelativeUrl}}" target="_blank"></a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
